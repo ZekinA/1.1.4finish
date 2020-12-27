@@ -90,7 +90,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
         try{
             transaction = session.beginTransaction();
-            session.createNativeQuery("delete User where id = :id")
+            session.createQuery("delete from User where id = :id")
                     .setParameter("id",id).executeUpdate();
             session.getTransaction().commit();
 
@@ -131,7 +131,7 @@ public class UserDaoHibernateImpl implements UserDao {
 
         try {
             transaction = session.beginTransaction();
-            session.createNativeQuery("delete User");
+            session.createQuery("delete User").executeUpdate();
             session.getTransaction().commit();
 
         } catch (Exception e) {
