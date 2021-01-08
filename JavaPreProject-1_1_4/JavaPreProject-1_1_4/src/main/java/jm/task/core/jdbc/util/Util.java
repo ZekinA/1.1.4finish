@@ -38,7 +38,7 @@ public class Util {
         if (sessionFactory == null) {
 
             try {
-                Configuration configuration = new Configuration().configure();
+                Configuration configuration = new Configuration();
                 Properties properties = new Properties();
 
                 properties.put(Environment.DRIVER,"com.mysql.jdbc.Driver");
